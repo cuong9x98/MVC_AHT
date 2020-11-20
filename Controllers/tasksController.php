@@ -2,8 +2,6 @@
 namespace MVC\Controllers;
 
 use MVC\Core\Controller;
-use MVC\Models\Task;
-use MVC\Models\TaskModel;
 use MVC\Models\TaskReponsitory;
 class TasksController extends Controller
 {

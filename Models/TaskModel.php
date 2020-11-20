@@ -1,7 +1,5 @@
 <?php 
 namespace MVC\Models;
-
-use MVC\Core\Model;
 class TaskModel extends Model
 {
     // Khai bao protected de lop con co the dung bien lop cha

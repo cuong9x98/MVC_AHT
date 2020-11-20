@@ -2,8 +2,6 @@
 namespace MVC\Core;
 
 use MVC\Core\ResourceModelInterface;
-use MVC\Core\Model;
-use MVC\Config\Database;
 class ResourceModel implements ResourceModelInterface{
 
     protected $id;
