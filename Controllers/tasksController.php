@@ -3,6 +3,7 @@ namespace MVC\Controllers;
 
 use MVC\Core\Controller;
 use MVC\Models\TaskReponsitory;
+
 class TasksController extends Controller
 {
     //function show all data task in screen
@@ -23,11 +24,10 @@ class TasksController extends Controller
             $task->setTitle($_POST["title"]);
             $task->setDescription($_POST["description"]);
             $task->setCreate_at(date("Y-m-d H:i:s"));
-            if ($taskSave->save($task)){
+            if ($taskSave->add($task)){
                 echo '<script type="text/javascript">alert("Add record to successful");</script>';
             }
         }
-
         $this->render("create");
     }
     // function update data
@@ -42,7 +42,7 @@ class TasksController extends Controller
             $task->setDescription($_POST['description']);
             $task->setUpdate_at(date("Y-m-d H:i:s"));
             $task->setCreate_at($task->setCreate_at($id));
-            if ($taskR->save($task)) {
+            if ($taskR->edit($task)) {
                 header("Location: " . WEBROOT . "tasks/edit/");
             }
         }

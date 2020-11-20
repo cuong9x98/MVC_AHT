@@ -2,6 +2,7 @@
 namespace MVC;
 
 use MVC\Core\Controller;
+
 class Dispatcher
 {
     private $request;
@@ -13,7 +14,6 @@ class Dispatcher
         $controller = $this->loadController();
         call_user_func_array([$controller, $this->request->action], $this->request->params);
     }
-
     // Get controller
     public function loadController()
     {

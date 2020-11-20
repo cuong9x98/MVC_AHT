@@ -1,5 +1,6 @@
 <?php
 namespace MVC;
+
 class Router
 {
     // xac dinh controller va action va param

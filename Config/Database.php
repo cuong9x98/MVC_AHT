@@ -2,10 +2,10 @@
 namespace MVC\Config;
 
 use PDO;
+
 class Database
 {
     private static $bdd = null;
-
     private function __construct() 
     {
     }

@@ -1,5 +1,6 @@
 <?php
 namespace MVC\Core;
+
 class Model
 {
     // Get value Model

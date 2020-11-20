@@ -1,12 +1,12 @@
 <?php 
 namespace MVC\Core;
 
-use MVC\Core\ResourceModelInterface;
-class ResourceModel implements ResourceModelInterface{
+use MVC\Config\Database;
 
-    protected $id;
-    protected $model;
-    protected $table;
+class ResourceModel implements ResourceModelInterface{
+    protected $id = null;
+    protected $model = null;
+    protected $table = null;
     //function _khoi tao
     public function _init($table, $id, $model)
     {
@@ -26,12 +26,10 @@ class ResourceModel implements ResourceModelInterface{
             foreach ($arrModel as $key => $value) {
                 $insert_key[] =$key;
                 array_push($placeholder, ':'.$key);
-
             }
             //Convert array to string
             $strKeyIns= implode(', ',$insert_key);
             $strPlaceholder=implode(', ',$placeholder);
-            
             //insert
             $sql_insert="INSERT INTO $this->table ({$strKeyIns}) VALUES ({$strPlaceholder})";
             $obj_insert =Database::getBdd()->prepare($sql_insert);
@@ -51,7 +49,6 @@ class ResourceModel implements ResourceModelInterface{
             $obj_update=Database::getBdd()->prepare($sql_update);
             return $obj_update->execute($arrModel);
         }
-
     }
     //function delete data with $sql_delete is query sql and prepare is check name table and id, getBdd connect db,execute run query
     public function delete($id){
